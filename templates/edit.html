@@ -1,0 +1,76 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Редагувати книгу</title>
+    <style>
+        body {
+            font-family: Arial;
+            background-color: #f2f4f8;
+            margin: 40px;
+            color: #333;
+        }
+
+        .container {
+            background-color: white;
+            max-width: 400px;
+            margin: 50px auto;
+            padding: 30px;
+            border-radius: 8px;
+        }
+
+        h1 {
+            color: #304c78;
+            text-align: center;
+        }
+
+        input {
+            width: 95%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: #4267a5;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #304c78;
+        }
+
+        a {
+            display: block;
+            text-align: center;
+            margin-top: 15px;
+            color: #4267a5;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Редагувати книгу</h1>
+
+        <form method="POST">
+            <label>Назва книги:</label>
+            <input type="text" name="title" value="{{ book['title'] }}" required>
+
+            <label>Автор:</label>
+            <input type="text" name="author" value="{{ book['author'] }}" required>
+
+            <button type="submit">Зберегти</button>
+        </form>
+
+        <a href="/">Назад</a>
+    </div>
+
+</body>
+</html>

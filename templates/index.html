@@ -1,0 +1,72 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Мої книги</title>
+    <style>
+        body {
+            font-family: Arial;
+            background-color: #f2f4f8;
+            margin: 40px;
+            color: #333;
+        }
+
+        h1 {
+            text-align: center;
+            color: #304c78;
+        }
+
+        .add-button {
+            display: block;
+            width: 150px;
+            margin: 25px auto;
+            padding: 12px;
+            background-color: #4267a5;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 6px;
+        }
+
+        .book {
+            background-color: white;
+            padding: 20px;
+            margin: 15px auto;
+            max-width: 500px;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px #ddd;
+        }
+
+        .book h3 {
+            color: #304c78;
+        }
+
+        .book a {
+            color: #4267a5;
+            margin-right: 15px;
+            text-decoration: none;
+        }
+
+        .book a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Моя бібліотека</h1>
+
+    <a class="add-button" href="/add">+ Додати книгу</a>
+
+    {% for book in books %}
+        <div class="book">
+            <h3>{{ book['title'] }}</h3>
+            <p>Автор: {{ book['author'] }}</p>
+
+            <a href="/edit/{{ book['id'] }}">Редагувати</a>
+            <a href="/delete/{{ book['id'] }}">Видалити</a>
+        </div>
+    {% endfor %}
+
+</body>
+</html>
